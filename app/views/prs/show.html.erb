@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pr.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @pr.content %>
+</p>
+
+<%= link_to 'Edit', edit_pr_path(@pr) %> |
+<%= link_to 'Back', prs_path %>

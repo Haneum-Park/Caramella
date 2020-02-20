@@ -61,3 +61,5 @@ gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
+gem 'impressionist', '~> 1.6', '>= 1.6.1'

@@ -23,6 +23,8 @@ body {
     border-radius: 0;
     font-family: Montserrat, sans-serif; }
 
+.navbar .container-fluid { padding: 0 15px; }
+
 .navbar li a, .navbar .navbar-brand { 
     color: #fff !important; 
     font-weight: bold; }
@@ -137,11 +139,6 @@ h4 {
     background-color: #5e7b98;
     color: #fff; }
 
-footer .glyphicon {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: #5e7b98; }
-
 .slideanim {visibility:hidden;}
 
 .slide {
@@ -150,6 +147,45 @@ footer .glyphicon {
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     visibility: visible; }
+
+/* Footer */
+
+footer h2 {
+    font-size: 17px;
+    color: #818181;
+    font-family: 'Nanum Gothic';
+}
+
+footer ul {
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+}
+
+footer ul li {
+    outline: none;
+    display: inline-block;
+    margin-right: 10px;
+    padding-right: 10px;
+    line-height: 12px;
+}
+
+footer ul, footer li {
+    list-style: none;
+    font-size: 13px;
+}
+
+footer ul li:first-child {
+    border-right: 1px solid #818181;
+}
+
+footer ul li a,
+footer ul li a:hover {
+    color: #818181;
+    text-decoration: none;
+    cursor: pointer;
+}
 
 @keyframes slide {
     0% {
@@ -183,6 +219,13 @@ footer .glyphicon {
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;}
+    
+    /* Footer */
+    footer ul {
+        position: relative;
+        right: 0;
+        text-align: left !important;
+    }
 }
 @media screen and (max-width: 480px) {
     .logo { font-size: 150px; }

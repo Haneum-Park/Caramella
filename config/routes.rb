@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :prs
   root :to => 'home#index'
   get 'home/index'
   get 'about/about', to: 'about#about'
