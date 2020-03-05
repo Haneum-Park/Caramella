@@ -1,0 +1,73 @@
+<%= stylesheet_link_tag 'contact' %>
+<%= javascript_include_tag 'contact'%>
+
+<% content_for(:side_bar) do %>
+    <%= render 'shared/navbar', :current => "contact" %>
+<% end %>
+    <% content_for(:footer) do %>
+    <%= render 'shared/footer' %>
+<% end %>
+
+<!-- Container (About Jumbotron) -->
+<div class="container contact">
+    <div class="jumbotron text-center" style="background-image: url(<%= asset_path('jumbotron.png') %>)">
+        <h1>CONTACT</h1> 
+    </div>
+</div>
+
+<!-- Container (Contact Section) -->
+<div class="container contact-section">
+    <h2 class="text-center">CONTACT</h2>
+    <%= form_tag "/contact/contact_success", method: :post, class: "col-sm-8 col-sm-offset-2" do |f| %>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="name">이름 *</label>
+                </span>
+                <input type="text" id="name" class="form-control input-lg" name="contact_from_name" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="email">이메일 *</label>
+                </span>
+                <input type="email" id="email" class="form-control input-lg" name="contact_from_email" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="company">회사명 *</label>
+                </span>
+                <input type="text" id="company" class="form-control input-lg" name="contact_from_company" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <label for="contact">전화번호 *</label>
+                </span>
+                <input type="tel" id="contact" class="form-control input-lg" name="contact_from_contact" required pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" onKeyup="inputPhoneNumber(this)">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#contents" class="panel-title">문의 작성</a>
+                    </div>
+                    <div class="panel-collapse collapse" id="contents">
+                        <div class="panel-body">
+                            <textarea rows="5" class="form-control input-lg" name="contact_from_contents"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-default">문의하기</button>
+        </div>
+    <% end %>
+</div>

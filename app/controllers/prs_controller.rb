@@ -3,25 +3,13 @@ class PrsController < ApplicationController
 
   # GET /prs
   # GET /prs.json
-  def index
-    @prs = Pr.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml { render :xml => @prs }
-    end
+  def index # .order("create_at DESC") 역순정렬
+    @prs = Pr.order("created_at DESC").page(params[:page]).per(10)
   end
 
   # GET /prs/1
   # GET /prs/1.json
   def show
-    @pr = Pr.find(params[:id])
-    puts "포스트 보여주기 #{params}"
-  
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @pr }
-    end
   end
 
   # GET /prs/new
@@ -73,23 +61,25 @@ class PrsController < ApplicationController
     end
   end
 
-  before_action :log_impression, :only=> [:show]
- 
-  # 조회수 설정
-  def log_impression
-      @hit_post = Pr.find(params[:id]) 
-      # this assumes you have a current_user method in your authentication system
-      @hit_post.impressions.create(ip_address: request.remote_ip)
+  def page_title
+      "PR | 카라멜라 공지사항"
+  end
+  
+  def page_content
+      "PUBLIC RELATION"
   end
 
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pr
       @pr = Pr.find(params[:id])
     end
-
+    
     # Only allow a list of trusted parameters through.
     def pr_params
-      params.require(:pr).permit(:title, :content)
+      params.require(:pr).permit(:title, :content, :date)
     end
+  # 조회수 기록 기준 (액션 : show / 기준 : impressionable_id(데이터 ID값), IP주소)
+  impressionist :actions=>[:show,:index]
 end

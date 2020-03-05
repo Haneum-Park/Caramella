@@ -1,5 +1,113 @@
+<% content_for(:side_bar) do %>
+    <%= render 'shared/navbar', :current => "about" %>
+<% end %>
+    <% content_for(:footer) do %>
+    <%= render 'shared/footer' %>
+<% end %>
+
+<%= stylesheet_link_tag 'about' %>
+
 <!-- Container (About Jumbotron) -->
-<div class="jumbotron text-center">
-    <h1>CARAMELLA</h1> 
-    <p>We specialize in blablabla</p>
+<div class="container about">
+    <div class="col-sm-4">
+        <h2>
+            <span>Software & Design</span>
+            <span class="span-size">소프트웨어 & 디자인</span>
+        </h2>
+    </div>
+    <div class="col-sm-8">
+        카라멜라는 소프트웨어와 디자인을 만드는 회사입니다.<br />
+        우리는 젊고 트렌디한 감성으로 시대의 감각을 반영하는 디자인과 
+        사용자가 편리하게 이용할 수 있는 소프트웨어를 만들어 
+        고객과 소비자 접점에 서서 가장 효율적이고 창의적인 아이디어를 도출해 내어
+        최고의 성과를 낼 수있는 Post human을 지향하고 있습니다.<br />
+        우리는 항상 남들과 다르게 접근을 하며 특별한 아이디어로 고객과 소통합니다.
+    </div>
 </div>
+
+<div class="container history">
+    <div class="row">
+        <div class="col-sm-4 text-center">
+            <h3>History</h3>
+        </div>
+        <div class="col-sm-8">
+            <ul class="history-contents">
+                <li>
+                    <strong>2016</strong>
+                    <span></span>
+                    <ul>
+                        <li><span>-</span> 광주정보문화산업진흥원 SW 창업랩 수행</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2017</strong>
+                    <span></span>
+                    <ul>
+                        <li><span>-</span> 창업성장기술개발 수행</li>
+                        <li><span>-</span> 스마트 벤처 캠퍼스 수행</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2018</strong>
+                    <span></span>
+                    <ul>
+                        <li><span>-</span> 여성창업경진대회 IBK 은행장상 수상</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2019</strong>
+                    <span></span>
+                    <ul>
+                        <li><span>-</span> 얼굴인식 2D 캐릭터 생성 솔루션 개발(Selfietoy)</li>
+                        <li><span>-</span> 청년창업사관학교 위탁업체 등록</li>
+                        <li><span>-</span> 2D 캐릭터 AR청첩장 개발(Marrybee)</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>2020</strong>
+                    <span class="last"></span>
+                    <ul>
+                        <li><span>-</span> 법인전환 및 연구소 설립</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div id="map" class="container"></div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=68e8cd7307b68ff116cf28bb180c3d25"></script>
+<script>
+    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(35.144915, 126.923180), // 지도의 중심좌표
+        draggable: false, // 지도의 이동 막기
+        level: 3 // 지도의 확대 레벨
+    };
+
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+    
+    // 버튼을 클릭하면 아래 배열의 좌표들이 모두 보이게 지도 범위를 재설정합니다 
+    var points = [
+        new kakao.maps.LatLng(35.144915, 126.923180)
+    ];
+
+    // 지도를 재설정할 범위정보를 가지고 있을 LatLngBounds 객체를 생성합니다
+    var bounds = new kakao.maps.LatLngBounds();    
+
+    var i, marker;
+    for (i = 0; i < points.length; i++) {
+        // 배열의 좌표들이 잘 보이게 마커를 지도에 추가합니다
+        marker =     new kakao.maps.Marker({ position : points[i] });
+        marker.setMap(map);
+        
+        // LatLngBounds 객체에 좌표를 추가합니다
+        bounds.extend(points[i]);
+    }
+
+    $(window).resize(function() {
+        // LatLngBounds 객체에 추가된 좌표들을 기준으로 지도의 범위를 재설정합니다
+        // 이때 지도의 중심좌표와 레벨이 변경될 수 있습니다
+        map.setBounds(bounds);
+    });
+</script>

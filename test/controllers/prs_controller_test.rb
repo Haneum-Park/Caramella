@@ -17,7 +17,7 @@ class PrsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create pr" do
     assert_difference('Pr.count') do
-      post prs_url, params: { pr: { content: @pr.content, title: @pr.title } }
+      post prs_url, params: { pr: { content: @pr.content, date: @pr.date, title: @pr.title } }
     end
 
     assert_redirected_to pr_url(Pr.last)
@@ -34,7 +34,7 @@ class PrsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update pr" do
-    patch pr_url(@pr), params: { pr: { content: @pr.content, title: @pr.title } }
+    patch pr_url(@pr), params: { pr: { content: @pr.content, date: @pr.date, title: @pr.title } }
     assert_redirected_to pr_url(@pr)
   end
 

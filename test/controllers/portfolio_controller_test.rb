@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class PortfolioControllerTest < ActionDispatch::IntegrationTest
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should get portfolio" do
+    get portfolio_portfolio_url
+    assert_response :success
+  end
+
 end

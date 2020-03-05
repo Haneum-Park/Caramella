@@ -1,3 +1,105 @@
 // Place all the styles related to the about controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.about {
+    padding-top: 60px;
+    
+    h2 {
+        margin: 0;
+
+        span {
+            font-weight: bold;
+            font-family: Montserrat;
+            font-size: 23px; }
+        .span-size {
+            font-size: 15px;
+            font-weight: normal; }
+    }
+    .col-sm-8 { color: #000; }
+}
+
+
+/* History */
+.history {
+    border-top: 1px solid #e6e6e6;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 60px;
+
+    li { color: #000; }
+
+    h3 {
+        margin-top: 0;
+        color: #000; }
+
+    .history-contents {
+        padding-top: 15px;
+
+        li:last-child {
+            ul { border-left: 0; }
+        }
+        
+        li {
+            padding-left: 100px;
+            position: relative;
+
+            strong {
+                position: absolute;
+                left: 0;
+                top: -10px;
+                color: #000; }
+
+            span {
+                position: absolute;
+                display: block;
+                width: 7px;
+                height: 7px;
+                left: 97px;
+                top: 0;
+                border-radius: 100%;
+                background-color: #818181; }
+            
+            ul {
+                border-left: 1px solid #818181;
+                padding: 0 0 25px 40px;
+
+                li:first-child { 
+                    bottom: 12px; 
+                    padding-bottom: 0; }
+
+                li {
+                    padding-left: 10px;
+                    padding-bottom: 10px;
+
+                    span {
+                        left: 0;
+                        top: 0;
+                        width: 0;
+                        height: 0; }
+                }
+            }
+        }
+    }
+}
+
+/* Kakao Map */
+#map { height: 500px; }
+
+@media screen and (max-width: 960px) {
+    .jumbotron {
+        p, h1 { text-align: center; }
+    }
+
+    .history {
+        h3 { text-align: left; }
+    }
+
+    #map { height: 400px; }
+}
+
+@media screen and (max-width: 768px) {
+    .history { 
+        .col-sm-4 { text-align: left; }
+    }
+}

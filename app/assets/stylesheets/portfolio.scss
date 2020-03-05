@@ -1,3 +1,230 @@
 // Place all the styles related to the portfolio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h2 {
+    color: #000; 
+    margin-bottom: 10px; }
+
+.project-header {
+    margin-top: 150px;
+    margin-bottom: 50px;
+}
+
+.back,
+.pj-name,
+.cg-name {
+    color: #000;
+    font-family: Montserrat;
+    letter-spacing: 3px;
+}
+
+.pj-name {
+    font-size: 20px;
+}
+
+.cg-name {
+    margin-bottom: 10px;
+}
+
+#category-btn-control {
+    button { color: #818181; }
+
+    .btn-active { color: #000; }
+
+    button:hover,
+    button:active,
+    button:focus {
+        outline: none;
+        color: #000;
+        text-decoration: none; }
+}
+
+.portfolio {
+    padding-left: 15px;
+    padding-right: 15px; }
+
+.portfolio .row { 
+    .container-fluid { padding: 60px 50px 60px; }
+
+    .container-fluid:nth-child(1) {
+        .row {
+            .col-sm-6:first-child { margin-top: 10%; }
+        }
+    }
+
+    .container-fluid:nth-child(2) {
+        border-top: 1px solid #e6e6e6;
+        padding-bottom: 0;
+        padding-left: 10px; }
+    
+    .container-fluid:nth-child(3) {
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
+        
+        .show { display: block; }
+
+        .col-sm-4 {
+            padding: 0 0.9%;
+            display: none;
+
+            .thumbnail { 
+                padding-bottom: 0; 
+                position: relative;
+                filter: grayscale(100%);
+                -webkit-filter: grayscale(100%);
+                
+                .overlay {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 45px;
+                    height: 45px;
+                    background-color: rgba(0, 0, 0, 0.6);
+                    border-radius: 100%;
+                    transform: translate(-50%, -50%);
+                    -webkit-transform: translate(-50%, -50%);
+                    transition: ease-in-out .5s;
+                    -webkit-transition: ease-in-out .5s;
+                    opacity: 0; 
+                
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
+                        transition: ease-in-out .5s;
+                        -webkit-transition: ease-in-out .5s;
+                        color: #fff;
+                        font-size: 20px; }
+                }
+            }
+            .thumbnail:hover {
+                filter: unset;
+                -webkit-filter: unset;
+                
+                a { cursor: pointer; }
+
+                .overlay { opacity: 1; }
+            }
+        }
+    }
+}
+
+/* Project */
+.project-content {
+    .project-detail {
+        .thumbnail {
+            box-shadow: 0 0 20px 0;
+            padding: 0;
+            margin-bottom: 50px; }
+
+        .swiper-container {
+            display: flex;
+            padding: 0;
+
+            .thumbnail,
+            .swiper-slide {
+                box-shadow: none;
+                margin-bottom: 0;
+                padding-left: 20px;
+                padding-right: 20px;
+                a {
+                    display: block;
+                    position: relative;
+                    
+                    img { margin-bottom: 0; }
+        
+                    .over-wrap {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        display: inline-block;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        opacity: 0; 
+                        
+                        span {
+                            color: #fff;
+                            position: absolute;
+                            top: 50%;
+                            left: 0;
+                            right: 0;
+                            width: 100%;
+                            transform: translateY(-50%);
+                            text-align: center; }
+                    }
+                }
+        
+                a:hover {
+                    box-shadow: 0 0 20px 0;
+                    .over-wrap { opacity: 1; }
+                }
+            }
+            
+            .swiper-slide:first-child {}
+
+            .thumbnail:last-child { margin-right: 0; }
+        }
+    }
+}
+
+.swiper-button-prev {
+    left: -9px !important;
+}
+
+.swiper-button-next {
+    right: -9px !important;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: unset !important;
+    color: #000;
+}
+
+@media screen and (max-width: 960px) {
+    .portfolio .row .container-fluid:nth-child(1) .row .col-sm-6:first-child { margin-top: 8%; }
+
+    .project-content {
+        .project-detail {
+            .swiper-container {
+                .thumbnail,
+                .swiper-slide {
+                    padding-left: 15px;
+                    padding-right: 15px; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .portfolio .row {
+        .container-fluid:nth-child(3) {
+            .col-sm-4 {
+                width: 50%;
+                float: left;
+                margin: 0;
+
+                .thumbnail {
+                    margin: 0;
+                    padding: 0; }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 585px) {
+    .project-content .project-detail .portfolio-list {
+        .thumbnail a { 
+            .over-wrap {
+                display: none;
+                opacity: 0; }
+        }
+    }
+}

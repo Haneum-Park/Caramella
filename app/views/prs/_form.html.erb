@@ -1,27 +1,36 @@
-<%= form_with(model: pr, local: true) do |form| %>
-  <% if pr.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(pr.errors.count, "error") %> prohibited this pr from being saved:</h2>
+<%= render 'prs/shared/notice_tab' %>
 
-      <ul>
-        <% pr.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
+<div class="container">
+    <%= form_with(model: pr, local: true) do |form| %>
+        <% if pr.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(pr.errors.count, "error") %> prohibited this pr from being saved:</h2>
+
+                <ul>
+                <% pr.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+                </ul>
+            </div>
         <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+        <div class="form-group">
+            <%= form.label :title %>
+            <%= form.text_field :title, class: 'form-control' %>
+        </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+        <div class="form-group">
+            <%= form.label :content %>
+            <%= form.text_area :content, class: 'form-control', row: '10' %>
+        </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+        <div class="form-group" style="display:none;">
+            <%= form.label :date %>
+            <%= form.date_select :date %>
+        </div>
+
+        <div class="form-group">
+            <%= form.submit class: 'btn btn-default', value: '게시글 생성 및 수정' %>
+        </div>
+    <% end %>
+</div>

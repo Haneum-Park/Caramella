@@ -1,20 +1,35 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import 'font-awesome';
 @import 'bootstrap-sprockets';
+@import 'font-awesome';
 @import 'bootstrap';
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
 body {
-    font: 400 15px Lato, sans-serif;
+    font: 400 15px Lato, Montserrat;
     line-height: 1.8;
-    color: #818181; }
+    color: #818181;
+    background-color: #fff;
+    position: relative; }
 
+.btn-default { background-color: unset; }
+
+ul, li {
+    list-style: none;
+    padding: 0; }
+
+i { font-style: unset; }
+
+i, a, a:hover, a:focus, a:active {
+    color: #818181;
+    text-decoration: none; }
+
+/* Navigation Bar */
 .navbar {
+    background-color: rgb(255, 255, 255);
+    padding-top: 15px;
     margin-bottom: 0;
-    background-color: #000;
-    opacity: 0.8;
     z-index: 9999;
     border: 0;
     font-size: 12px !important;
@@ -23,35 +38,60 @@ body {
     border-radius: 0;
     font-family: Montserrat, sans-serif; }
 
-.navbar .container-fluid { padding: 0 15px; }
+.navbar .container { padding: 0 15px; }
 
-.navbar li a, .navbar .navbar-brand { 
-    color: #fff !important; 
+.navbar .container .navbar-header .text-center { padding-left: 0; }
+
+.navbar li a { 
+    color: #666 !important; 
     font-weight: bold; }
 
-.navbar-nav li a:hover, .navbar-nav li.active a {
-    color: #5e7b98 !important;
-    background-color: #fff !important; }
+.navbar .navbar-brand {
+    font-size: 30px;
+    color: #000 !important;
+    font-weight: bold; 
+    font-family: Montserrat; }
+
+.navbar-brand-header { float: unset; }
+
+.navbar-nav li a:hover, 
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color: #2E2E2E !important; }
 
 .navbar-default .navbar-toggle {
     border-color: transparent;
-    color: #fff !important; }
+    color: #fff !important; 
+    z-index: 9999; 
+    margin-right: 0; }
 
-.navbar-default .navbar-toggle .icon-bar { background-color: #fff }
+.navbar-default .navbar-toggle .icon-bar { background-color: #666 }
 
 .navbar-default .navbar-toggle:hover .icon-bar,
 .navbar-default .navbar-toggle:active .icon-bar {
-    background-color: #888; }
+    background-color: #fff; }
+
+.intro,
+.about, 
+.portfolio, 
+.contact, 
+.prs,
+.contact_success {
+    margin-top: 115px;
+    padding-left: 0;
+    padding-right: 0; }
 
 .jumbotron {
-    background-color: #f6f6f6;
-    color: #000;
+    background-size: cover;
+    color: #fff;
     padding: 100px 25px;
-    font-family: Montserrat, sans-serif; }
+    font-family: Montserrat, sans-serif;
+    border-radius: 0 !important; }
+
+.jumbotron a { color: #fff; }
 
 h2 {
     font-size: 24px;
-    text-transform: uppercase;
     color: #303030;
     font-weight: 600;
     margin-bottom: 30px; }
@@ -62,8 +102,6 @@ h4 {
     color: #303030;
     font-weight: 400;
     margin-bottom: 30px; }
-
-
 
 .container-fluid { padding: 60px 50px; }
 
@@ -87,58 +125,6 @@ h4 {
     height: 100%;
     margin-bottom: 10px; }
 
-.carousel-control.right, .carousel-control.left {
-    background-image: none;
-    color: #5e7b98; }
-
-.carousel-indicators li { border-color: #5e7b98; }
-
-.carousel-indicators li.active { background-color: #5e7b98; }
-
-.item h4 {
-    font-size: 19px;
-    line-height: 1.375em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 70px 0; }
-
-.item span { font-style: normal; }
-
-.panel {
-    border: 1px solid #5e7b98; 
-    border-radius:0 !important;
-    transition: box-shadow 0.5s; }
-
-.panel:hover { box-shadow: 5px 0px 40px rgba(0,0,0, .2); }
-
-.panel-footer .btn:hover {
-    border: 1px solid #5e7b98;
-    background-color: #fff !important;
-    color: #5e7b98; }
-
-.panel-heading {
-    color: #fff !important;
-    background-color: #5e7b98 !important;
-    padding: 25px;
-    border-bottom: 1px solid transparent;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px; }
-
-.panel-footer { background-color: white !important; }
-
-.panel-footer h3 { font-size: 32px; }
-
-.panel-footer h4 {
-    color: #aaa;
-    font-size: 14px; }
-
-.panel-footer .btn {
-    margin: 15px 0;
-    background-color: #5e7b98;
-    color: #fff; }
-
 .slideanim {visibility:hidden;}
 
 .slide {
@@ -149,44 +135,40 @@ h4 {
     visibility: visible; }
 
 /* Footer */
+footer {
+    margin-top: 50px;
+    padding-bottom: 20px;
+    text-align: center; 
 
-footer h2 {
-    font-size: 17px;
-    color: #818181;
-    font-family: 'Nanum Gothic';
+    div ul {
+        li:first-child { padding-left: 0; }
+        
+        li:last-child {
+            border-right: 0;
+            padding-right: 0; }
+
+        li {
+            display: inline-block;
+            padding-right: 5px;
+            line-height: 15px;
+
+            a, a:hover { color: #818181; }
+
+            a span {
+                font-size: 15px;
+                font-weight: bold;
+                font-family: 'Nanum Gothic'; }
+        }
+    }
+
+    .use-of-term {
+        li {
+            a, a:hover { font-size: 13px; }
+        }
+    }
 }
 
-footer ul {
-    padding: 0;
-    position: absolute;
-    right: 20px;
-    bottom: 0px;
-}
-
-footer ul li {
-    outline: none;
-    display: inline-block;
-    margin-right: 10px;
-    padding-right: 10px;
-    line-height: 12px;
-}
-
-footer ul, footer li {
-    list-style: none;
-    font-size: 13px;
-}
-
-footer ul li:first-child {
-    border-right: 1px solid #818181;
-}
-
-footer ul li a,
-footer ul li a:hover {
-    color: #818181;
-    text-decoration: none;
-    cursor: pointer;
-}
-
+/* Animations */
 @keyframes slide {
     0% {
         opacity: 0;
@@ -207,11 +189,59 @@ footer ul li a:hover {
         -webkit-transform: translateY(0%); }
 }
 
-.btn-default { background-color: unset; }
-@media screen and (max-width: 1024px) {
+/* Media Query Custom */
+@media screen and (max-width: 960px) {
+    /* Navbigation Bar */
+    .navbar { padding-top: 0; }
+
+    .navbar-brand-header {
+        padding-left: 0;
+
+        .navbar-toggle {
+            float: left;
+            margin-left: 5px; }
+
+        .navbar-toggle:hover,
+        .navbar-toggle:active,
+        .navbar-toggle:focus {
+            background-color: unset;
+
+            .icon-bar { background-color: #666; }
+        }
+    }
+
+    .navbar .navbar-brand {
+        font-size: 18px;
+        margin-top: unset;
+        color: #000 !important;
+        font-weight: unset; }
+
+    .about, .portfolio, .contact, .prs, .contact_success { margin-top: 100px; }
 }
 
 @media screen and (max-width: 768px) {
+    .navbar-default .navbar-toggle { margin-right: 4.5%; }
+
+    .navbar-default,
+    .navbar-toggle, 
+    .icon-bar { color: #666 !important; }
+
+    .navbar-header div { text-align: center; }
+
+    .navbar .container .navbar-header .col-sm-12 { 
+        right: 0;
+        left: 0;
+        position: absolute;
+        width: 100%; }
+    
+    .navbar-brand {
+        float: unset;
+        line-height: 53px; }
+
+    .nav-ver { display: none; }
+
+    .about, .portfolio, .contact, .prs, .contact_success { margin-top: 55px; }
+
     .col-sm-4 {
         text-align: center;
         margin: 25px 0; }
@@ -219,14 +249,25 @@ footer ul li a:hover {
     .btn-lg {
         width: 100%;
         margin-bottom: 35px;}
-    
+}
+
+@media screen and (min-width: 768px) {
+    .navbar-right { margin-right: 0; }
+}
+
+@media screen and (max-width: 585px) {
+    .navbar { background-color: rgba(255, 255, 255, 0.7); }
+
     /* Footer */
-    footer ul {
-        position: relative;
-        right: 0;
-        text-align: left !important;
+    footer {
+        div {
+            .use-of-term {
+                li:first-child { display: block; }
+            }
+        }
     }
 }
+
 @media screen and (max-width: 480px) {
     .logo { font-size: 150px; }
 }
