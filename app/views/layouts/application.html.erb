@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Caramella</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <title><%= controller.page_title %></title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
+        <!-- meta -->
+        <meta name="title" content="<%= controller.page_title %>">
+        <meta name="description" content="<%= controller.page_content %>">
+        <!-- og meta -->
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="<%= controller.page_title %>">
+        <meta property="og:description" content="<%= controller.page_content %>">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    </head>
 
-  <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-    <%= render 'shared/navbar' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
-  </body>
+    <body oncontextmenu="return false" ondragstart="return false" onselectstart="return false" oncopy="return false" oncut="return false" onpaste="return false">
+        <%= yield :side_bar %>
+        <%= yield %>
+        <%= yield :footer %>
+    </body>
 </html>

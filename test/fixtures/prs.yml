@@ -3,7 +3,9 @@
 one:
   title: MyString
   content: MyText
+  date: 2020-02-20
 
 two:
   title: MyString
   content: MyText
+  date: 2020-02-20

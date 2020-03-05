@@ -1,0 +1,21 @@
+<% content_for(:side_bar) do %>
+    <%= render 'shared/navbar', :current => "contact" %>
+<% end %>
+    <% content_for(:footer) do %>
+    <%= render 'shared/footer' %>
+<% end %>
+
+<%= stylesheet_link_tag 'contact' %>
+<div class="container contact_success">
+    <div class="col-sm-6 col-sm-offset-3 text-center">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div><%= @name %>님의 이름으로</div>
+                <div>메일이 전송되었습니다.</div>
+            </div>
+            <div class="panel-footer">
+                <a class="btn btn-link" href="/">처음으로</a>
+            </div>
+        </div>
+    </div>
+</div>

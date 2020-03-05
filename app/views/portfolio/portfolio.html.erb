@@ -1,5 +1,184 @@
-<!-- Container (About Jumbotron) -->
-<div class="jumbotron text-center">
-    <h1>CARAMELLA</h1> 
-    <p>We specialize in blablabla</p>
-</div>
+<%= stylesheet_link_tag 'portfolio' %>
+<%= javascript_include_tag 'portfolio' %>
+
+<% content_for(:side_bar) do %>
+    <%= render 'shared/navbar', :current => "portfolio" %>
+<% end %>
+    <% content_for(:footer) do %>
+    <%= render 'shared/footer' %>
+<% end %>
+
+<div class="container portfolio">
+    <div class="row">
+    <!-- Container (Intro Section) 1 -->
+        <div class="col-sm-12 container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h2>Design & Development</h2>
+                    <p>카라멜라는 가치있는 브랜드와 서비스를 디자인하고 개발합니다.</p>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <img src="<%= asset_path '1.png' %>" alt="caramella" width="100%">
+                </div>
+            </div>
+        </div>
+    <!-- Container (MAin THings Section for category button ) -->
+        <div class="col-sm-12 container-fluid">
+            <div id="category-btn-control" class="btn-group">
+                <button type="button" class="btn btn-link btn-active" onclick="filterSelection('all')">All</button>
+                <button type="button" class="btn btn-link" onclick="filterSelection('logo')">Logo</button>
+                <button type="button" class="btn btn-link" onclick="filterSelection('web')">Web</button>
+                <button type="button" class="btn btn-link" onclick="filterSelection('app')">App</button>
+                <button type="button" class="btn btn-link" onclick="filterSelection('tech')">Tech</button>
+            </div>
+        </div>
+    <!-- Container (Main Things Section) 3 -->
+        <div class="col-sm-12 container-fluid">
+            <div class="col-sm-4 logo">
+                <div class="thumbnail">
+                    <a href="/portfolio/logo/babymoon">
+                        <img src="<%= asset_path 'logo/main/logo-1.png' %>" alt="logo-1.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 web">
+                <div class="thumbnail">
+                    <a href="/portfolio/web/bebeliebe">
+                        <img src="<%= asset_path 'web/main/web-1.png' %>" alt="web-1.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 logo">
+                <div class="thumbnail">
+                    <a href="/portfolio/logo/bebeliebe-1">
+                        <img src="<%= asset_path 'logo/main/logo-2.png' %>" alt="logo-2.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 web">
+                <div class="thumbnail">
+                    <a href="/portfolio/web/joynco">
+                        <img src="<%= asset_path 'web/main/web-2.png' %>" alt="web-2.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 logo">
+                <div class="thumbnail">
+                    <a href="/portfolio/logo/bebeliebe-2">
+                        <img src="<%= asset_path 'logo/main/logo-3.png' %>" alt="logo-3.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 web">
+                <div class="thumbnail">
+                    <a href="/portfolio/web/multimediacurpos">
+                        <img src="<%= asset_path 'web/main/web-3.png' %>" alt="web-3.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 logo">
+                <div class="thumbnail">
+                    <a href="/portfolio/logo/multimediacurpos">
+                        <img src="<%= asset_path 'logo/main/logo-4.png' %>" alt="logo-4.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 web">
+                <div class="thumbnail">
+                    <a href="/portfolio/web/marrybee">
+                        <img src="<%= asset_path 'web/main/web-4.png' %>" alt="web-4.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 logo">
+                <div class="thumbnail">
+                    <a href="/portfolio/logo/joynco">
+                        <img src="<%= asset_path 'logo/main/logo-5.png' %>" alt="logo-5.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 web">
+                <div class="thumbnail">
+                    <a href="/portfolio/web/meetu">
+                        <img src="<%= asset_path 'web/main/web-5.png' %>" alt="web-5.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 logo">
+                <div class="thumbnail">
+                    <a href="/portfolio/logo/meetu">
+                        <img src="<%= asset_path 'logo/main/logo-6.png' %>" alt="logo-6.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 app">
+                <div class="thumbnail">
+                    <a href="/portfolio/app/bebeliebe">
+                        <img src="<%= asset_path 'app/main/app-1.png' %>" alt="app-1.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 app">
+                <div class="thumbnail">
+                    <a href="/portfolio/app/marrybee">
+                        <img src="<%= asset_path 'app/main/app-2.png' %>" alt="app-2.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 app">
+                <div class="thumbnail">
+                    <a href="/portfolio/app/meetu">
+                        <img src="<%= asset_path 'app/main/app-3.png' %>" alt="app-3.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 tech">
+                <div class="thumbnail">
+                    <a href="/portfolio/tech/bebeliebe">
+                        <img src="<%= asset_path 'tech/main/tech-1.png' %>" alt="tech-1.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 tech">
+                <div class="thumbnail">
+                    <a href="/portfolio/tech/selfietoy">
+                        <img src="<%= asset_path 'tech/main/tech-2.png' %>" alt="tech-2.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 tech">
+                <div class="thumbnail">
+                    <a href="/portfolio/tech/marrybee">
+                        <img src="<%= asset_path 'tech/main/tech-3.png' %>" alt="tech-3.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-4 tech">
+                <div class="thumbnail">
+                    <a href="/portfolio/tech/meetu">
+                        <img src="<%= asset_path 'tech/main/tech-4.png' %>" alt="tech-4.png">
+                        <div class="overlay"><i class="fa fa-arrow-right"></i></div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div
+>

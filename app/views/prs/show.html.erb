@@ -1,14 +1,36 @@
-<p id="notice"><%= notice %></p>
+<% content_for(:side_bar) do %>
+    <%= render 'shared/navbar', :current => "prs" %>
+<% end %>
+    <% content_for(:footer) do %>
+    <%= render 'shared/footer' %>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @pr.title %>
-</p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @pr.content %>
-</p>
+<%= render 'prs/shared/notice_tab' %>
 
-<%= link_to 'Edit', edit_pr_path(@pr) %> |
-<%= link_to 'Back', prs_path %>
+<%= javascript_include_tag 'prs.js' %>
+
+<div class="container pr-show-container">
+    <ul class="text-center">
+        <li><a class="col-sm-12">공지사항</a></li>
+    </ul>
+    <div class="col-sm-12 contents">
+        <div class="col-sm-12 title">
+            <h2><%= @pr.title %></h2>
+        </div>
+        <div class="col-sm-12 content">
+            <div class="col-sm-12 text-right">
+                <ul>
+                    <li><%= @pr.date %></li>
+                    <li>조회 수 : <%= "#{@pr.impressionist_count}" %></li>
+                </ul>
+            </div>
+            <div class="col-sm-12 description">
+                <%= @pr.content %>
+            </div>
+        </div>
+        <div class="col-sm-12 back-btn text-center">
+            <a href="/prs" class="btn btn-default">목록 보기</a>
+        </div>
+    </div>
+</div>

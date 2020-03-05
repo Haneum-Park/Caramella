@@ -2,3 +2,171 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+body { position: relative; }
+
+h2 {
+    color: #000; }
+
+.nav-ver {
+    padding-top: 0; 
+    padding-bottom: 0; }
+
+.intro {
+    .container-fluid { padding: 30px 50px; }
+
+    .container-fluid:nth-child(1),
+    .container-fluid:nth-child(2),
+    .container-fluid:nth-child(3),
+    .container-fluid:nth-child(5) {
+        padding-top: 60px;
+        padding-bottom: 60px; }
+
+    .container-fluid:nth-child(2) { padding-bottom: 0px; }
+}
+
+.item h4 a, .item h4 a:hover { color: #000; }
+
+.intro .row {
+    .container-fluid:nth-child(1) {
+        .row {
+            .col-sm-6:first-child { 
+                margin-top: 10% ;
+                h2 { margin-bottom: 10px; }
+            }
+        }
+    }
+
+    .container-fluid:nth-child(2),
+    .container-fluid:nth-child(5) {
+        border-top: 1px solid #e6e6e6; }
+
+    .container-fluid:nth-child(4) {
+        strong {
+            font-size: 20px;
+            color: #000;
+            line-height: 30px; }
+    }
+
+    .container-fluid:nth-child(3) {
+        padding-left: 15px;
+        padding-right: 15px;
+
+        .portfolio-list {
+            .col-sm-4 {
+                padding: 0 0.9%;
+
+                .thumbnail { 
+                    padding-bottom: 0; 
+                    position: relative;
+
+                    filter: grayscale(100%);
+                    -webkit-filter: grayscale(100%);
+                    
+                    .overlay {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        width: 45px;
+                        height: 45px;
+                        background-color: rgba(0, 0, 0, 0.6);
+                        border-radius: 100%;
+                        transform: translate(-50%, -50%);
+                        -webkit-transform: translate(-50%, -50%);
+                        transition: ease-in-out .5s;
+                        -webkit-transition: ease-in-out .5s;
+                        opacity: 0; 
+                    
+                    
+                        i {
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            -webkit-transform: translate(-50%, -50%);
+                            transition: ease-in-out .5s;
+                            -webkit-transition: ease-in-out .5s;
+                            color: #fff;
+                            font-size: 20px; }
+                    }
+                }
+                .thumbnail:hover {
+                    filter: unset;
+                    -webkit-filter: unset;
+                    
+                    a { cursor: pointer; }
+                    .overlay { opacity: 1; }
+                }
+            }
+        }
+        
+        .more-link {
+            div {
+                padding: 0 1%;
+                
+                a {
+                    border-radius: 0;
+                    font-size: 12px;
+                    letter-spacing: 5px; }
+
+                a:hover {
+                    background-color: #000;
+                    border-color: #000;
+                    color: #fff; }
+                
+                a, a:hover { transition: background-color 0.8s, color 0.8s, border-color 0.8s; }
+            }
+        }
+    }
+}
+
+.slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: unset;
+    -webkit-animation-duration: unset; }
+
+.carousel-control.right, .carousel-control.left {
+    background-image: none;
+    color: #000; }
+
+.carousel-control { 
+    text-shadow: none; 
+    opacity: 1; }
+
+.carousel-control:hover { text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6); }
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0; }
+
+.item span { font-style: normal; }
+
+@media screen and (max-width: 960px) {
+    .intro .row .container-fluid:nth-child(1) .row .col-sm-6:first-child { margin-top: 8%; }
+}
+
+@media screen and (max-width: 768px) {
+    .intro .row {
+        .container-fluid:nth-child(3) {
+            .row:nth-child(1) {
+                .col-sm-4 {
+                    width: 50%;
+                    float: left;
+                    margin: 0;
+                    
+                    .thumbnail {
+                        margin: 0;
+                        padding: 0; }
+                }
+            }
+            .row:nth-child(2) {
+                div {
+                    a { display: block; }
+                }
+            }
+        }
+    }
+}

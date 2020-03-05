@@ -1,24 +1,29 @@
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
+    <div class="container">
+        <div class="navbar-header navbar-brand-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>                        
             </button>
-            <a class="navbar-brand" href="/">Caramella</a>
+            <div class="col-sm-12"><a class="navbar-brand media-navbar-brand" href="/">CARAMELLA</a></div>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <% if current == "portfolio" %><li class="active"><% else %><li><% end %>      
+                    <a href="/portfolio/portfolio">PORTFOLIO</a>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/about/about">ABOUT</a></li>
-                <!--
-                <li><a href="#services">SERVICES</a></li>
-                -->
-                <li><a href="/portfolio/portfolio">PORTFOLIO</a></li>
-                
-                <li><%= link_to 'PR', prs_path %></li>
-                
-                <li><a href="/apply/apply">CONTACT</a></li>
+                <% if current == "about" %><li class="active"><% else %><li><% end %>
+                    <a href="/about/about">ABOUT</a>
+                </li>
+                <% if current == "prs" %><li class="active"><% else %><li><% end %>
+                    <%= link_to 'PR', prs_path %>
+                </li>
+                <% if current == "contact" %><li class="active"><% else %><li><% end %>
+                    <a href="/contact/contact">CONTACT</a>
+                </li>
             </ul>
         </div>
     </div>

@@ -1,0 +1,212 @@
+<%= stylesheet_link_tag 'portfolio' %>
+<%= javascript_include_tag 'portfolio' %>
+
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.css">
+<script src="https://unpkg.com/swiper/js/swiper.js"></script>
+
+<% content_for(:side_bar) do %>
+    <%= render 'shared/navbar', :current => "portfolio" %>
+<% end %>
+    <% content_for(:footer) do %>
+    <%= render 'shared/footer' %>
+<% end %>
+
+<div class="container project-header">
+    <ul>
+        <li class="back">
+            <a href="/portfolio/portfolio"><span>&#8592; BACK</span></a>
+        </li>
+    </ul>
+</div>
+<div class="container project-content">
+    <div class="col-sm-12">
+        <div class="pj-name"><%= @number %></div>
+        <div class="cg-name"><%= @cate %></div>
+    </div>
+    <div class="col-sm-12 project-detail">
+        <div class="thumbnail">
+        <!-- Logo -->
+            <% if @cate == 'logo' %>
+                <% if @number == "babymoon" %>
+                    <img src="<%= asset_path 'logo/detail/logo-detail-1.png' %>" alt="babymoon" width="100%">
+                <% elsif @number == "bebeliebe-1" %>
+                    <img src="<%= asset_path 'logo/detail/logo-detail-2.png' %>" alt="bebeliebe1" width="100%">
+                <% elsif @number == "bebeliebe-2" %>
+                    <img src="<%= asset_path 'logo/detail/logo-detail-3.png' %>" alt="bebeliebe2" width="100%">
+                <% elsif @number == "multimediacurpos" %>
+                    <img src="<%= asset_path 'logo/detail/logo-detail-4.png' %>" alt="multimediacurpos" width="100%">
+                <% elsif @number == "joynco" %>
+                    <img src="<%= asset_path 'logo/detail/logo-detail-5.png' %>" alt="joynco" width="100%">
+                <% elsif @number == "meetu" %>
+                    <img src="<%= asset_path 'logo/detail/logo-detail-6.png' %>" alt="meetu" width="100%">
+                <% end %>
+        <!-- Web -->
+            <% elsif @cate == 'web' %>
+                <% if @number == "bebeliebe" %>
+                    <img src="<%= asset_path 'web/detail/web-detail-1.png' %>" alt="bebeliebe" width="100%">
+                <% elsif @number == "joynco" %>
+                    <img src="<%= asset_path 'web/detail/web-detail-2.png' %>" alt="joynco" width="100%">
+                <% elsif @number == "multimediacurpos" %>
+                    <img src="<%= asset_path 'web/detail/web-detail-3.png' %>" alt="multimediacurpos" width="100%">
+                <% elsif @number == "marrybee" %>
+                    <img src="<%= asset_path 'web/detail/web-detail-4.png' %>" alt="marrybee" width="100%">
+                <% elsif @number == "meetu" %>
+                    <img src="<%= asset_path 'web/detail/web-detail-5.png' %>" alt="meetu" width="100%">
+                <% end %>
+        <!-- App -->
+            <% elsif @cate == 'app' %>
+                <% if @number == "bebeliebe" %>
+                    <img src="<%= asset_path 'app/detail/app-detail-1.png' %>" alt="bebeliebe" width="100%">
+                <% elsif @number == "marrybee" %>
+                    <img src="<%= asset_path 'app/detail/app-detail-2.png' %>" alt="marrybee" width="100%">
+                <% else %>
+                    <img src="<%= asset_path 'app/detail/app-detail-3.png' %>" alt="meetu" width="100%">
+                <% end %>
+        <!-- Tech -->
+            <% elsif @cate == 'tech' %>
+                <% if @number == "bebeliebe" %>
+                    <img src="<%= asset_path 'tech/detail/tech-detail-1.png' %>" alt="bebeliebe" width="100%">
+                <% elsif @number == "selfietoy" %>
+                    <img src="<%= asset_path 'tech/detail/tech-detail-2.png' %>" alt="selfietoy" width="100%">
+                <% elsif @number == "marrybee" %>
+                    <img src="<%= asset_path 'tech/detail/tech-detail-3.png' %>" alt="marrybee" width="100%">
+                <% elsif @number == "meetu" %>
+                    <img src="<%= asset_path 'tech/detail/tech-detail-4.png' %>" alt="meetu" width="100%">
+                <% end %>
+            <% end %>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <% if @cate == "logo" %>
+                <!-- Logo -->
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/logo/babymoon">
+                            <img src="<%= asset_path 'logo/main/logo-1.png' %>">
+                            <div class="over-wrap"><span>babymoon</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/logo/bebeliebe-1">
+                            <img src="<%= asset_path 'logo/main/logo-2.png' %>">
+                            <div class="over-wrap"><span>bebeliebe-1</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/logo/bebeliebe-2">
+                            <img src="<%= asset_path 'logo/main/logo-3.png' %>">
+                            <div class="over-wrap"><span>bebeliebe-2</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/logo/multimediacurpos">
+                            <img src="<%= asset_path 'logo/main/logo-4.png' %>">
+                            <div class="over-wrap"><span>multimediacurpos</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/logo/joynco">
+                            <img src="<%= asset_path 'logo/main/logo-5.png' %>">
+                            <div class="over-wrap"><span>joy & co</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/logo/meetu">
+                            <img src="<%= asset_path 'logo/main/logo-6.png' %>">
+                            <div class="over-wrap"><span>meetu</span></div>
+                        </a>
+                    </div>
+                <% elsif @cate == "web" %>
+                <!-- Web -->
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/web/babymoon">
+                            <img src="<%= asset_path 'web/main/web-1.png' %>">
+                            <div class="over-wrap"><span>babymoon</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/web/bebeliebe-1">
+                            <img src="<%= asset_path 'web/main/web-2.png' %>">
+                            <div class="over-wrap"><span>bebeliebe-1</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/web/bebeliebe-2">
+                            <img src="<%= asset_path 'web/main/web-3.png' %>">
+                            <div class="over-wrap"><span>bebeliebe-2</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/web/multimediacurpos">
+                            <img src="<%= asset_path 'web/main/web-4.png' %>">
+                            <div class="over-wrap"><span>multimediacurpos</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/web/joynco">
+                            <img src="<%= asset_path 'web/main/web-5.png' %>">
+                            <div class="over-wrap"><span>joy & co</span></div>
+                        </a>
+                    </div>
+                <% elsif @cate == "app" %>
+                <!-- App -->
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/app/bebeliebe">
+                            <img src="<%= asset_path 'app/main/app-1.png' %>">
+                            <div class="over-wrap"><span>bebeliebe</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/app/marrybee">
+                            <img src="<%= asset_path 'app/main/app-2.png' %>">
+                            <div class="over-wrap"><span>marrybee</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/app/meetu">
+                            <img src="<%= asset_path 'app/main/app-3.png' %>">
+                            <div class="over-wrap"><span>meetu</span></div>
+                        </a>
+                    </div>
+                <% elsif @cate == "tech" %>
+                <!-- Tech -->
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/tech/bebeliebe">
+                            <img src="<%= asset_path 'tech/main/tech-1.png' %>">
+                            <div class="over-wrap"><span>bebeliebe</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/tech/selfietoy">
+                            <img src="<%= asset_path 'tech/main/tech-2.png' %>">
+                            <div class="over-wrap"><span>selfietoy</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/tech/marrybee">
+                            <img src="<%= asset_path 'tech/main/tech-3.png' %>">
+                            <div class="over-wrap"><span>marrybee</span></div>
+                        </a>
+                    </div>
+                    <div class="swiper-slide thumbnail">
+                        <a href="/portfolio/tech/meetu">
+                            <img src="<%= asset_path 'tech/main/tech-4.png' %>">
+                            <div class="over-wrap"><span>meetu</span></div>
+                        </a>
+                    </div>
+                <% end %>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</div>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  </script>

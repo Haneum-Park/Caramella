@@ -1,6 +1,15 @@
 <h1>Editing Pr</h1>
 
 <%= render 'form', pr: @pr %>
-
-<%= link_to 'Show', @pr %> |
-<%= link_to 'Back', prs_path %>
+<div class="container">
+    <div clsas="row">
+        <ul>
+            <li>
+                <div class="btn-group">
+                    <%= link_to '해당 게시물 보기', @pr, class: 'btn btn-default' %>
+                    <%= link_to '이전으로 가기', prs_path, class: 'btn btn-danger' %>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

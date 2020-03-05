@@ -15,6 +15,7 @@ class PrsTest < ApplicationSystemTestCase
     click_on "New Pr"
 
     fill_in "Content", with: @pr.content
+    fill_in "Date", with: @pr.date
     fill_in "Title", with: @pr.title
     click_on "Create Pr"
 
@@ -27,6 +28,7 @@ class PrsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Content", with: @pr.content
+    fill_in "Date", with: @pr.date
     fill_in "Title", with: @pr.title
     click_on "Update Pr"
 
